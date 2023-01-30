@@ -2,8 +2,11 @@
 using namespace std;
 
 int main(){
-    for(int i=1;i<=5;i++){
-        for(int j=1;j<=(5-i);j++){
+    int n;
+    cout<<"Enter Rows: ";
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=(n-i);j++){
             cout<<" ";
         }
         for(int x=1;x<=(i+(i-1));x=x+2){
