@@ -1,15 +1,21 @@
 #include<iostream>
 using namespace std;
+
 int main(){
-    int ar[5]={1,2,3,4,5};
+    int arr[5]={7,8,5,6,9};
+
+    bool flag=0;
+
     int num;
-    cout<<"Enter Num: ";
+    cout<<"Enter number to be checked: ";
     cin>>num;
-    int count=0;
-    for(int i=0; i<5; i=i+1){
-        if(ar[i]==num){count++;}
+
+    for(int i=0; i<sizeof(arr); i=i+1){
+        if(arr[i]==num){flag=1;}
     }
-    if(count>=1){cout<<"Present";}
-    else{cout<<"Not Present";}
-    return 0;
+
+    if(flag==1){cout<<"It is there";}
+    else{cout<<"It's not there";}
 }
+
+
