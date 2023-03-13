@@ -3,23 +3,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int squareRoot(int num,  vector<int>arr){
+int squareRoot(int num){
+  int target=num;
   int start=0;
-  int end=arr.size()-1;
+  int end=num;
   int mid=start+((end-start)/2);
+  int ans=-1;
 
   while(start<=end){
     //mid is the sqare-root
-  if(mid*mid==num){
+  if(mid*mid==target){
     return mid;
   }  
   //mid*mid>num --> search left
-  if(mid*mid>num){
+  if(mid*mid>target){
     end=mid-1;
   }
 
   //mid*mid<num -->search right
-  if(mid*mid<num){
+  else{
+    ans=mid;
     start=mid+1;
   }
 
@@ -29,12 +32,8 @@ int squareRoot(int num,  vector<int>arr){
 }
 
 int main() {
-  int num=9;
+  int num=10;
   vector<int>arr(num);
-  //giving values to array
-  for(int i=1; i<=num; i=i+1){
-    arr[i]=i;
-  }
-  int ans=squareRoot(num,arr);
+  int ans=squareRoot(num);
   cout<<ans<<endl;
 }
